@@ -1,0 +1,37 @@
+﻿2FA Method,Provider Responsibilities,User Responsibilities,Examples
+SMS Authentication,"Securely transmit codes, addressing SS7 vulnerabilities and interception risks.",Keep phone number private.,Text message codes
+,Implement measures against SIM swapping.,Avoid using public Wi-Fi for logins.,
+,Implementation of SMS carrier transfer pin or stronger form of verification.,Secure the mobile device with a strong PIN or biometrics.,
+,,Use a passphrase instead of a pin or weak password.,
+Time-based OTP (TOTP),Securely store seed information and algorithm.,Protect secret key and QR code.,"Google Authenticator, Authy"
+,Implement proper clock synchronization.,Use a secure and updated TOTP generator app,
+,Safeguard the TOTP generation algorithm.,Disable the use of multi-device support when not synchronizing.,
+,,Back up secret keys.,
+,,Use a passphrase instead of a pin or weak password.,
+Push Notifications,Securely deliver push notifications with encryption.,Confirm or deny authentication requests promptly.,"Okta Verify, Duo Mobile, Custom mobile apps"
+,Implement secure communication channels.,Secure the device(s) receiving push notifications.,
+,Require user device registration and verification.,Only approve requests from known sessions.,
+,Rate limit push bomb attacks.,Be wary of unfamiliar apps.,
+,Prevent known social engineering techniques.,Use a passphrase instead of a pin or weak password.,
+Biometric Authentication (PassKeys),Securely store and process biometric data with encryption.,Use devices with FIDO2 support for passwordless logins.,"Windows Hello, Apple FaceID and TouchID, Fingerprint, Face recognition, Voice recognition"
+,Ensure cryptographic key material is not exported without authorization.,Update device firmware for continued security.,
+,Implement anti-spoofing measures.,Enroll and use biometrics responsibly.,
+,Have data breach notification policies.,Protect biometric data and devices from unauthorized access.,
+,Allow user control over data retention.,Avoid relying solely on biometrics and combine with other factors.,
+,Safeguard passkey generation process with strong encryption.,,
+,Provide a secure distribution mechanism for passkeys.,,
+Hardware Tokens (FIDO2/WebAuthn),Use tamper-proof hardware with secure communication protocols.,Securely store and handle the hardware token.,"RSA SecurID, Google Titan Key, YubiKey"
+,Provide tokens that are FIDO2 /WebAuthn compliant and FIPS certified based on environment.,Keep the token physically secure.,
+,,Keep tokens for high-risk accounts separate from low risk.,
+,,Remove less secure and non-backup authentication factors.,
+,,Use a passphrase instead of a password.,
+Voice Calls,Securely deliver codes via voice calls with encryption.,Answer calls promptly and keep phone secure.,Automated phone calls with authentication codes
+,Implement spoofing detection methods.,Be cautious of unexpected calls and verify caller identity before entering codes.,
+,"Use as a fallback, not primary, method.",,
+Email Codes,Detect fraudulent mail infrastructure and prevent authentication method.,Protect email account and codes from unauthorized access.,Authentication codes sent via email
+,Ensure secure email delivery through encrypted channels.,Use encrypted email services.,
+,Educate users on phishing attacks and email security best practices.,Check sender authenticity before entering codes.,
+,"Use as a fallback, not primary, method.",Use a passphrase instead of a password.,
+Knowledge-based Authentication,Securely store and manage challenge questions and responses with encryption.,Choose challenge questions carefully and answer accurately.,Challenge questions based on personal or non-public information
+,Inform users of limitations and social engineering risks.,Avoid using public information as answers.,
+,"Use as a fallback, not primary, method.",Update answers regularly.,
